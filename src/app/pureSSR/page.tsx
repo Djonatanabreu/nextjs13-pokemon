@@ -1,6 +1,6 @@
-import Preloader from '@/components/PokemonTable/Preloader';
-import Providers from '@/components/Provider/Provider';
-import { SearchInput } from '@/components/SearchInput/SearchInput';
+// ## ITS A PURE SSR COMPONENT CONNECTING WITH THE STORE.
+
+import SSRPokemonTable from '@/components/PokemonTable/SSRPokemonTable';
 import { setStartupPokemon } from '@/store/searchSlice';
 import { store } from '@/store/store';
 
@@ -13,10 +13,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Preloader pokemons={data} />
-      <Providers>
-        <SearchInput />
-      </Providers>
+      <SSRPokemonTable />
     </main>
   );
 }
